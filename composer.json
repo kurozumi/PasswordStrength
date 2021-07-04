@@ -1,0 +1,13 @@
+{
+    "name": "ec-cube/passwordstrength",
+    "version": "1.0.0",
+    "description": "パスワード強化プラグイン for EC-CUBE4.1",
+    "type": "eccube-plugin",
+    "require": {
+        "ec-cube/plugin-installer": "~0.0.7 || ^2.0",
+        "rollerworks/password-strength-bundle": "*"
+    },
+    "extra": {
+        "code": "PasswordStrength"
+    }
+}

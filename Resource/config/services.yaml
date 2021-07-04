@@ -1,0 +1,2 @@
+parameters:
+  eccube_password_min_strength: 3
