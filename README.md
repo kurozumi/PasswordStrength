@@ -1,4 +1,4 @@
-# PasswordStrength for EC-CUBE4.1
+# パスワード強度検証プラグイン for EC-CUBE4.1
 
 このプラグインは、[PasswordStrengthValidator](https://github.com/rollerworks/PasswordStrengthValidator) を [EC-CUBE4.1](https://github.com/EC-CUBE/ec-cube) に統合します。
 
