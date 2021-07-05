@@ -18,6 +18,9 @@ use Eccube\Form\Type\RepeatedPasswordType;
 use Rollerworks\Component\PasswordStrength\Validator\Constraints\PasswordStrength;
 use Symfony\Component\Form\AbstractTypeExtension;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 
 class RepeatedPasswordTypeExtension extends AbstractTypeExtension
 {
@@ -37,8 +40,17 @@ class RepeatedPasswordTypeExtension extends AbstractTypeExtension
             'options', [
                 'constraints' => [
                     new PasswordStrength([
+                        'message' => 'eccube.password_too_weak',
                         'minLength' => $this->eccubeConfig['eccube_password_min_len'],
-                        'minStrength' => $this->eccubeConfig['eccube_password_min_strength']
+                        'minStrength' => $this->eccubeConfig['password_min_strength']
+                    ]),
+                    new NotBlank(),
+                    new Length([
+                        'max' => $this->eccubeConfig['eccube_password_max_len'],
+                    ]),
+                    new Regex([
+                        'pattern' => '/^[[:graph:][:space:]]+$/i',
+                        'message' => 'form_error.graph_only',
                     ])
                 ]
             ]

@@ -1,2 +1,9 @@
 parameters:
-  eccube_password_min_strength: 3
+  password_min_strength: 3
+
+services:
+  Plugin\PasswordStrength\Form\Extension\RepeatedPasswordTypeExtension:
+    arguments:
+      - '@Eccube\Common\EccubeConfig'
+    tags:
+      - { name: form.type_extension, priority: -99, extended_type: Eccube\Form\Type\RepeatedPasswordType }

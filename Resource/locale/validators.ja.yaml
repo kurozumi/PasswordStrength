@@ -1,0 +1,1 @@
+eccube.password_too_weak: パスワードは最低でも強度"{{ min_strength }}"レベル以上が必要です。現在のレベルは"{{ current_strength }}"なので、こちらをお試しください。 {{ strength_tips }}
